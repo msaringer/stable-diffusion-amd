@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.3.1-runtime-ubuntu20.04
+FROM rocm/pytorch:rocm5.2_ubuntu20.04_py3.7_pytorch_1.11.0_navi21
 
 ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /sd
