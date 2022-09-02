@@ -10,11 +10,12 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Skip this as rocm container already has conda
 # Install miniconda
 ENV CONDA_DIR /opt/conda
-RUN wget -O ~/miniconda.sh -q --show-progress --progress=bar:force https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
-    /bin/bash ~/miniconda.sh -b -p $CONDA_DIR && \
-    rm ~/miniconda.sh
+#RUN wget -O ~/miniconda.sh -q --show-progress --progress=bar:force https://repo.anaconda.com/miniconda/#Miniconda3-latest-Linux-x86_64.sh && \
+#    /bin/bash ~/miniconda.sh -b -p -u $CONDA_DIR && \
+#    rm ~/miniconda.sh
 ENV PATH=$CONDA_DIR/bin:$PATH
 
 # Install font for prompt matrix
